@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bd3-firebase</title>
-    <link rel="stylesheet" href="styles.css">
 
-</head>
-<body>
-    <h1>WEB APP LIBRE - FIREBASE: FIRESTORE</h1>
+<html lang="pt-br">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BD3 - FIREBASE</title>
+
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+
+        <h1>WEB APP LIBRI - FIREBASE: FIRESTORE</h1>
+
         <div class="content">
             <form id="add-book-form">
                 <input type="text" name="autor" placeholder="Nome do autor">
@@ -17,38 +24,42 @@
             </form>
             <ul id="book-list"></ul>
         </div>
-</body>
+        
+    </body>
 
-    <!-- IMPORT DO SDK DO FIREBASE --> 
-
+    <!-- SDK DO FIREBASE -->
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script> 
 
-
-    <!-- IMPORT DO SDK DO FIRESTORE --> 
-
+    <!-- SDK DO FIRESTORE -->
     <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script> 
 
-    <!-- CONEXÃO COM FIREBASE -->
-
+    <!-- CONEXÃO COM O FIREBASE -->
     <script>
+
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
             apiKey: "AIzaSyBXzulx4snLsS2dtdkCQBepCjL3iWYW9PI",
             authDomain: "bd3-app-libre-viniciuspatriota.firebaseapp.com",
             projectId: "bd3-app-libre-viniciuspatriota",
             storageBucket: "bd3-app-libre-viniciuspatriota.appspot.com",
             messagingSenderId: "581658364464",
-            appId: "1:581658364464:web:3765c8954ddcb3d45e7bf5",
-            measurementId: "G-DKMSNQRVDZ"
-          };
-          /*Inicializa o FIREBASE*/
-          firebase.initializeApp(firebaseConfig);
+            appId: "1:581658364464:web:dfe676ecdba9ee4a5e7bf5",
+            measurementId: "G-X8DJ8FGJ1Y"
+        };
 
-          /*Inicializa o FIRESTORE*/
-          const db = firebase.firestore();
-          console.log(db);
+        /* INICIALIZA O FIREBASE */
+        firebase.initializeApp(firebaseConfig);
+
+        /* INICIALIZA O FIRESTORE */
+        const db = firebase.firestore();
+        const settings = {timestampsInSnapshots: true};
+        db.settings(settings);
+        console.log(db);
 
     </script>
 
     <!-- IMPORTAÇÃO DO ARQUIVO app.js -->
     <script src="app.js"></script>
+    
+
 </html>
